@@ -8,4 +8,6 @@ Rails.application.routes.draw do
       resource :survey
     end
   end
+
+  root to: 'pages#about_us'
 end
