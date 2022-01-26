@@ -6,7 +6,7 @@
   <% end %>
 
   <div>You don't have any bitsets now! Let's create it right now!</div>
-  <%= form_for @bitset do |f| %>
+  <%= form_for @bitset, url: user_bitset_path do |f| %>
     <%= f.text_field :set %>
     <%= f.submit %>
   <% end %>

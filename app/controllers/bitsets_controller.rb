@@ -1,13 +1,11 @@
 class BitsetsController < ApplicationController
-  def show
-    @bitset = Bitset.find(params[:id])
-  end
+  before_action :bitset, only: %w[new show]
 
   def create
-    @bitset = Bitset.create(bitset_params)
+    @bitset.create(bitset_params)
 
-    if @bitset.errors.empty?
-      redirect_to @bitset, success: 'Successfully created!'
+    if bitset.errors.empty?
+      redirect_to bitset, success: 'Successfully created!'
     else
       flash[:error] = 'Something went wrong'
       render 'new'
@@ -15,7 +13,7 @@ class BitsetsController < ApplicationController
   end
 
   def update
-    @bitset = Bitset.update(bitset_params)
+    bitset.update(bitset_params)
   end
 
   def new
@@ -26,5 +24,9 @@ class BitsetsController < ApplicationController
 
   def bitset_params
     params.require(:bitset).permit(:set, :id)
+  end
+
+  def bitset
+    @bitset ||= current_user.bitset
   end
 end

@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  resources :bitsets, only: %w[show create update new]
+  resource :user do
+    resource :bitset
+  end
 end
