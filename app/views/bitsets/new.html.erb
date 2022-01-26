@@ -1,0 +1,13 @@
+<div>
+  <% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %>">
+      <%= value %>
+    </div>
+  <% end %>
+
+  <div>You don't have any bitsets now! Let's create it right now!</div>
+  <%= form_for @bitset, url: user_bitset_path do |f| %>
+    <%= f.text_field :set %>
+    <%= f.submit %>
+  <% end %>
+</div>
