@@ -5,6 +5,7 @@ Rails.application.routes.draw do
     resource :bitset do
       get '/theory', to: 'pages#theory'
       get '/about', to: 'pages#about_us'
+      resource :survey
     end
   end
 end

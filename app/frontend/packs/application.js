@@ -9,6 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 import '../js/bootstrap_js_files'
 import 'font-awesome/css/font-awesome.min.css'
+import '../js/survey'
 
 Rails.start()
 Turbolinks.start()
