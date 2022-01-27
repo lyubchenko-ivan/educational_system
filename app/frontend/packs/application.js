@@ -10,6 +10,7 @@ import "channels"
 import '../js/bootstrap_js_files'
 import 'font-awesome/css/font-awesome.min.css'
 import '../js/survey'
+import '../js/bitset'
 
 Rails.start()
 Turbolinks.start()
